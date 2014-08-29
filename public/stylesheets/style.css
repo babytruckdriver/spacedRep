@@ -1,0 +1,171 @@
+/*
+    Estilos globales
+*/
+
+html {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+}
+
+body {
+        font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        line-height: 1.4em;
+        background: #eeeeee;
+        color: #333333;
+        max-width: 520px;
+        margin: 0 auto; /* Centra horizontalmente */
+
+        padding: 20px;
+        margin-bottom: 40px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 2px;
+        border-radius: 0 0 5px 5px;
+        border-bottom: 10px;
+}
+
+/* Quito los estilos por defecto de las listas desordenadas*/
+
+ul {
+        list-style-type: none;
+        /* Quita las tabulaciones por defecto de las listas */
+        margin: 0;
+        padding: 0;
+}
+
+ul > li {
+        text-align: left;
+}
+
+/* Quito los estilos por defecto que pudieran tener los links*/
+
+a:link,:visited {
+        text-decoration: none;
+        border: none;
+        color: #000;
+}
+
+/*
+    Estilos específicos de la aplicación
+*/
+
+/* Cabecera */
+
+.app-header {
+        display: inline-block; /* para poderlo centrar */
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 20px;
+
+        transition: transform 1s;
+}
+
+.app-header:hover {
+        transform: skewX(10deg);
+}
+
+.app-title {
+        font-size: 3em;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.3);
+        text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+        background: url("/images/favicon.png") no-repeat;
+        background-size: contain;
+        padding-left: 70px;
+}
+
+/* Cuerpo de la aplicación */
+
+
+/* Menú */
+
+
+/* Mesa */
+
+
+
+/* Pié de página */
+
+@font-face {
+        font-family: "entypo";
+        src: url("../fonts/Entypo/entypo.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+}
+
+@font-face {
+        font-family: "entypoSocial";
+        src: url("../fonts/Entypo/entypo-social.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+}
+
+#social {
+        margin: 15px 5px 5px 5px;
+        padding: 5px;
+        /*background: linear-gradient(to right,rgba(255, 99, 71, 0.5), rgba(0, 255, 255, 0.5), rgba(144, 238, 144, 0.5));*/
+        background: linear-gradient(to right, rgba(189, 42, 51, 0.75), rgba(214, 170, 38, 0.5), rgba(147, 163, 28, 0.5), rgba(64, 129, 86, 0.5), rgba(48, 55, 79, 0.5));
+        border-radius: 4px;
+}
+
+
+[class*="icon-"] {
+        background-image: none;
+        display: inline;
+        font-size: 1em;
+        font-style: normal !important;
+        font-weight: normal !important;
+        height: 1em;
+        overflow: visible;
+        width: 1em;
+}
+
+[class*="icon-"]::before {
+        content: '+';
+        display: inline-block;
+        font-family: "entypo", fantasy !important;
+        /*line-height: 1;*/
+        position: relative;
+        top: 2px;
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+}
+
+[class*="icon-social"]::before {
+        font-family: "entypoSocial", fantasy !important;
+        /*line-height: 1;*/
+        position: relative;
+        top: 2px;
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+        opacity: .6;
+}
+
+[class*="icon-social"]:hover::before {
+        opacity: .3;
+}
+
+[class*="icon-social"]:active::before {
+         color: rgba(0,0,0,.5);
+}
+
+.icon-social-twitter::before {
+        content: "\F309";
+        font-size: 3em;
+
+}
+
+.icon-social-github::before {
+        content: "\F300";
+        font-size: 3em;
+}
+
+.hide {
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 0;
+        opacity: 0;
+        position: absolute;
+        visibility: hidden;
+        width: 0;
+}
+
