@@ -11,6 +11,9 @@
         <!--link rel="icon" href="images/favicon.png" type="image/png" /-->
 </head>
 
+<!-- //TODO: La convinación de teclas CTRL-m saca el menú-->
+<!-- //TODO: Al pinchar en la flecha sale el menú-->
+
 <body id="spacedRep">
         <article class="app-header">
                 <a href="#">
@@ -18,16 +21,18 @@
                 </a>
         </article>
 
+        <!-- //Note: "main" tiene posición relativa respecto al "body", y "mesa-layer" posición absoluta respecto a "main" -->
         <main>
-                <nav>
-
+                <div id="menu-layer">
+                        <span id="options">
+                                <div>Decks</div>
+                                <div>Preferences</div>
+                        </span>
                         <span class="arrow">&#59226;</span>
-                </nav>
-                <section>
-                        <article id="mesa">
-
-                        </article>
-                </section>
+                </div>
+                <div id="desk-layer">
+                        <p>Esta es la mesa donde mostrar el conjunto de mazos y el estudio del mazo seleccionado</p>
+                </div>
         </main>
 
         <footer>
