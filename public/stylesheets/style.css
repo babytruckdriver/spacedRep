@@ -76,6 +76,7 @@ a:link,:visited {
 
 /* Cuerpo de la aplicación */
 
+/* Fuentes e estilos generales para iconos */
 
 @font-face {
         font-family: "entypo";
@@ -83,6 +84,33 @@ a:link,:visited {
         font-weight: normal;
         font-style: normal;
 }
+
+[class*="icon-"] {
+        background-image: none;
+        font-size: 1em;
+        font-style: normal !important;
+        font-weight: normal !important;
+        height: 1em;
+        overflow: visible;
+        width: 1em;
+}
+
+[class*="icon-"]::before {
+        content: '+';
+        font-family: "entypo", fantasy !important;
+        /*line-height: 1;*/
+        position: relative;
+        top: 2px;
+}
+
+[class*="icon-"]:hover {
+        opacity: .5;
+}
+
+[class*="icon-"]:active {
+        opacity: .3;
+}
+
 
 main {
         position: relative;
@@ -115,17 +143,22 @@ main > div {
         box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-#options > div{
-        margin: 10px;
+#menu-layer > div{
+        margin-top: 15px;
+        margin-left: 10px;
         cursor: pointer;
 }
 
-#options > div:hover{
-        opacity: .5;
+.icon-preferences::before {
+        content: "\2699";
+        font-size: 3em;
+        padding-right: 5px;
 }
 
-#options > div:active{
-        opacity: .3;
+.icon-decks::before {
+        content: "\E800";
+        font-size: 3em;
+        padding-right: 5px;
 }
 
 .arrow {
@@ -144,10 +177,6 @@ main > div {
         opacity: .7;
 }
 
-.arrow:hover {
-        opacity: .3;
-}
-
 /* Mesa */
 
 #desk-layer {
@@ -158,9 +187,39 @@ main > div {
         width: 100%;
 
         box-sizing: border-box;
-        padding: 0 20px 0 50px;
+        padding: 0 0 0 50px;
 
         color: grey;
+}
+
+/* Botones de acción //TODO: estos deberían modificarse dependiando de la vista (ej: en preferences botón save o cancel */
+#actions-layer {
+        position: absolute;
+        right: 20px;
+        bottom: 0;
+        padding: 10px 20px; /* Arriba-abajo derecha-izquierda*/
+
+        box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 2px;
+        border-radius: 5px 5px 5px 5px;
+}
+
+#actions-layer > span {
+        height: 100%;
+        width: 100%;
+
+        cursor: pointer;
+}
+
+.icon-save::before {
+        content: "\1F4BE";
+        font-size: 3em;
+        padding-right: 5px;
+}
+
+.icon-cancel::before {
+        content: "\2716";
+        font-size: 3em;
+        padding-right: 5px;
 }
 
 /* Pié de página */
@@ -178,27 +237,6 @@ main > div {
         /*background: linear-gradient(to right,rgba(255, 99, 71, 0.5), rgba(0, 255, 255, 0.5), rgba(144, 238, 144, 0.5));*/
         background: linear-gradient(to right, rgba(189, 42, 51, 0.75), rgba(214, 170, 38, 0.5), rgba(147, 163, 28, 0.5), rgba(64, 129, 86, 0.5), rgba(48, 55, 79, 0.5));
         border-radius: 4px;
-}
-
-
-[class*="icon-"] {
-        background-image: none;
-        display: inline;
-        font-size: 1em;
-        font-style: normal !important;
-        font-weight: normal !important;
-        height: 1em;
-        overflow: visible;
-        width: 1em;
-}
-
-[class*="icon-"]::before {
-        content: '+';
-        display: inline-block;
-        font-family: "entypo", fantasy !important;
-        /*line-height: 1;*/
-        position: relative;
-        top: 2px;
 }
 
 [class*="icon-social"]::before {
