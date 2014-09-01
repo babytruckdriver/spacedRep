@@ -149,14 +149,15 @@ main > div {
         cursor: pointer;
 }
 
-.icon-preferences::before {
+.icon-menu-preferences::before {
         content: "\2699";
-        font-size: 3em;
-        padding-right: 5px;
 }
 
-.icon-decks::before {
+.icon-menu-decks::before {
         content: "\E800";
+}
+
+[class*="icon-menu"]::before {
         font-size: 3em;
         padding-right: 5px;
 }
@@ -179,7 +180,7 @@ main > div {
 
 /* Mesa */
 
-#desk-layer {
+#main-layer {
         position: absolute;
         left: 0;
         top: 0;
@@ -210,14 +211,31 @@ main > div {
         cursor: pointer;
 }
 
-.icon-save::before {
+.icon-action-save::before {
         content: "\1F4BE";
-        font-size: 3em;
-        padding-right: 5px;
 }
 
-.icon-cancel::before {
+.icon-action-cancel::before {
         content: "\2716";
+
+}
+
+.icon-action-play::before {
+        content: "\25B6";
+
+}
+
+.icon-action-pause::before {
+        content: "\2016";
+
+}
+
+.icon-action-stop::before {
+        content: "\25A0";
+
+}
+
+[class*="icon-action"]::before {
         font-size: 3em;
         padding-right: 5px;
 }

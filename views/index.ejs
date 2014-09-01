@@ -24,17 +24,19 @@
         <!-- //Note: "main" tiene posición relativa respecto al "body", y "mesa-layer" acciones-layer tienen posición absoluta respecto a "main" -->
         <main>
                 <div id="menu-layer">
-                        <div class="icon-decks">Decks</div>
-                        <div class="icon-preferences">Preferences</div>
+                        <div class="icon-menu-decks">Decks</div>
+                        <div class="icon-menu-preferences">Preferences</div>
                         <span class="arrow">&#59226;</span>
                 </div>
-                <div id="desk-layer">
+                <div id="main-layer">
                         <p>Esta es la mesa donde mostrar el conjunto de mazos y el estudio del mazo seleccionado</p>
                 </div>
+
+                <!-- //NOTE: La división "actions-layer" contendrá la plantilla Handlebars depende con los botones correspondientes a cada ocasión -->
+                <!-- FUTURE: Utilizar las plantillas declaradas en la parte final en vez de este HTML estático (que solo sirve para ilustrar el diseño)-->
                 <div id="actions-layer">
-                        <!-- //TODO: Utilizar plantillas Handlebars para crear las diferentes botoneras-->
-                        <span class="icon-save">Save</span>
-                        <span class="icon-cancel">Discard</span>
+                        <span class="icon-action-save">Save</span>
+                        <span class="icon-action-cancel">Discard</span>
                 </div>
         </main>
 
@@ -51,5 +53,32 @@
                   </a>
                 </ul>
         </footer>
+
+        <!-- ===================================== -->
+        <!--          Plantillas Handlebars        -->
+        <!-- ===================================== -->
+        <!-- Botones de acción-->
+        <script  id="preferences-actions-template" type="text/x-handlebars-template">
+                <span class="icon-action-save">Save</span>
+                <span class="icon-action-cancel">Discard</span>
+        </script>
+
+        <script  id="decks-actions-template" type="text/x-handlebars-template">
+                <span class="icon-action-play">Play</span>
+                <span class="icon-action-pause">Pause</span>
+                <span class="icon-action-stop">Stop</span>
+        </script>
+
+        <!-- Contenido principal -->
+        <script  id="preferences-template" type="text/x-handlebars-template">
+                <!-- //TODO: Crear plantilla que muestre las preferencias de la aplicación -->
+        </script>
+
+        <script  id="decks-template" type="text/x-handlebars-template">
+                <!-- //TODO: Crear plantilla que muestre el listado de mazos de tarjetas -->
+        </script>
+
+        <!-- //TODO: Crear plantillas que muestren el contenido de los mazos (alta, baja, modificación) y las plantillas para el estudio de un mazo -->
+
 </body>
 </html>
