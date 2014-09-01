@@ -266,6 +266,11 @@ main > div {
         font-size: 3em;
 }
 
+.icon-social-500px::before {
+        content: "\F32D";
+        font-size: 3em;
+}
+
 .hide {
         clip: rect(1px, 1px, 1px, 1px);
         height: 0;
