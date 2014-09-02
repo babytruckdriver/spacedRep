@@ -9,6 +9,7 @@ html {
 }
 
 body {
+        position: relative;
         font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
         line-height: 1.4em;
         background: #eeeeee;
@@ -57,12 +58,12 @@ a:link,:visited {
         box-sizing: border-box;
         padding: 20px;
 
-        transition: transform 1s;
+        /*transition: transform 1s;*/
 }
 
-.app-header:hover {
+/*.app-header:hover {
         transform: skewX(10deg);
-}
+}*/
 
 .app-title {
         font-size: 3em;
@@ -72,6 +73,31 @@ a:link,:visited {
         background: url("/images/favicon.png") no-repeat;
         background-size: contain;
         padding-left: 70px;
+}
+
+.login-tag {
+        position: absolute;
+        top: 0;
+        right: 30px;
+        color: #b4b4b4;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 2px;
+        border-radius: 0 0 5px 5px;
+
+        width: 8px;
+        padding: 5px 10px 10px;
+        text-align: center;
+        font-size: .8em;
+        font-weight: bold;
+        line-height: 1.2em;
+        word-wrap: break-word;
+
+        transition: box-shadow .3s, line-height .3s;
+}
+
+.login-tag:hover {
+        box-shadow: rgba(132, 0, 0, 0.38) 0 2px 6px 2px;
+        line-height: 1.5em;
 }
 
 /* Cuerpo de la aplicación */
