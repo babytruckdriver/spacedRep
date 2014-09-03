@@ -14,7 +14,7 @@ body {
         line-height: 1.4em;
         background: #eeeeee;
         color: #333333;
-        max-width: 620px;
+        max-width: 640px;
         margin: 0 auto; /* Centra horizontalmente */
 
         padding: 20px;
@@ -52,11 +52,11 @@ a:link,:visited {
 /* Cabecera */
 
 .app-header {
-        display: inline-block; /* para poderlo centrar */
+        /*display: inline-block; /* para poderlo centrar */
         width: 100%;
-        text-align: center;
+        text-align: left;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 15px 20px 20px;
 
         /*transition: transform 1s;*/
 }
@@ -78,27 +78,24 @@ a:link,:visited {
 .login-tag {
         position: absolute;
         top: 0;
-        right: 30px;
+        right: 20px;
         color: #b4b4b4;
-        cursor: pointer;
         box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 2px;
         border-radius: 0 0 5px 5px;
 
-        width: 8px;
-        padding: 5px 10px 10px;
-        text-align: center;
+        padding: 8px;
         font-size: .8em;
         font-weight: bold;
-        line-height: 1.2em;
-        word-wrap: break-word;
-
-        transition: box-shadow .3s, line-height .3s;
 }
 
-.login-tag:hover {
-        box-shadow: rgba(132, 0, 0, 0.38) 0 2px 6px 2px;
-        line-height: 1.5em;
+.login-tag > input {
+        line-height: .5em;
+        color: grey;
+        font-size: 1em;
+        width: 100px;
+        margin: 0 5px;
 }
+
 
 /* Cuerpo de la aplicación */
 

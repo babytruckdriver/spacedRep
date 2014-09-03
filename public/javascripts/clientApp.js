@@ -9,7 +9,12 @@ define(["helper/util", "handlebars", "jquery", "underscore", "backbone"], functi
         var App = {
 
                 init: function () {
-                      log("spacedRep initializing...");
+                        log("spacedRep initializing...");
+                        /*log("util: " + typeof util);
+                        log("Handlebars: " + typeof Handlebars);
+                        log("$: " + typeof $);
+                        log("_: " + typeof _);
+                        log("Backbone: " + typeof Backbone);*/
                 }
         };
 

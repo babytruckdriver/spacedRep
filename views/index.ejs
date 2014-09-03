@@ -22,7 +22,10 @@
         </article>
 
         <!-- Para poder colocar este elemento de forma absoluta respecto a "body", este tiene que tener "position: relative" -->
-        <div class="login-tag">Login</div>
+        <div class="login-tag">
+                <label for="user">User</label><input type="text" id="user">
+                <label for="pass">Pass</label><input type="password" id="pass">
+        </div>
 
         <!-- //Note: "main" tiene posición relativa respecto al "body", y "mesa-layer" acciones-layer tienen posición absoluta respecto a "main" -->
         <main>
@@ -70,9 +73,9 @@
         </script>
 
         <script  id="decks-actions-template" type="text/x-handlebars-template">
-                <span class="icon-action-play">Play</span>
-                <span class="icon-action-pause">Pause</span>
-                <span class="icon-action-stop">Stop</span>
+                <span class="icon-action-play"></span>
+                <span class="icon-action-pause"></span>
+                <span class="icon-action-stop"></span>
         </script>
 
         <!-- Contenido principal -->
