@@ -1,7 +1,7 @@
 /*jslint indent:8, devel:true, browser:true, vars:true*/
 /*global jQuery, $, Handlebars, define*/
 
-define(["helper/util", "handlebars", "jquery"], function (util, Handlebars, $) {
+define(["helper/util", "handlebars", "jquery", "underscore", "backbone"], function (util, Handlebars, $, _, Backbone) {
         "use strict";
 
         var log = util.log.bind(util);
