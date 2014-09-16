@@ -10,6 +10,9 @@ define({
         DEBUG: true,
         log: function (msg) {
                 "use strict";
+                if (typeof msg === "object") {
+                        msg = JSON.stringify(msg);
+                }
                 if (this.DEBUG) {
                         console.log(msg);
                 }
