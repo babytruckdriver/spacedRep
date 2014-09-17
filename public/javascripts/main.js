@@ -18,5 +18,5 @@ require.config({
 
 require(["clientApp"], function (Application) {
         "use strict";
-        Application.App.init();
+        Application.init();
 });

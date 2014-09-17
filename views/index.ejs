@@ -23,8 +23,6 @@
 
         <!-- Para poder colocar este elemento de forma absoluta respecto a "body", este tiene que tener "position: relative" -->
         <div class="login-tag">
-                <label for="user">User</label><input type="text" id="user">
-                <label for="pass">Pass</label><input type="password" id="pass">
         </div>
 
         <!-- //Note: "main" tiene posición relativa respecto al "body", y "mesa-layer" acciones-layer tienen posición absoluta respecto a "main" -->
@@ -69,7 +67,8 @@
 
         <!-- Login -->
         <script  id="login-template" type="text/x-handlebars-template">
-                <!-- //TODO: Crear plantilla que muestre el listado de mazos de tarjetas -->
+                <label for="name">User</label><input type="text" id="name" value="{{userInfo.name}}">
+                <label for="pass">Pass</label><input type="password" id="pass" value="{{userInfo.pass}}">
         </script>
 
         <!-- Botones de acción-->
