@@ -1,14 +1,16 @@
 SpacedRep
 ===============
 
-An "Spaced Repetition Learning System" built on Node, Express and MongoDB.
+An "Spaced Repetition Learning System" backendless app.
 
 Installation and execution instructions:
 ------------------------------------------
 Installation:
 
-    $ npm install
+    $ npm install --save node-static
+    $ node server.js
 
 Execution:
 
-    $ npm start
+    In the browser: 
+    http://localhost:8080
