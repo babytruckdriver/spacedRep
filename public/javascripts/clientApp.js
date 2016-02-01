@@ -5,8 +5,18 @@ define(["helper/util", "handlebars", "jquery"], function (util, Handlebars, $) {
 
     var App = {
 
-        init: function () {
+        init() {
             log("spacedRep initializing...");
+            this.domCache();
+            this.render();
+        },
+
+        domCache() {
+            this.loginArea = $(".login-tag");
+        },
+
+        render() {
+            this.loginArea.html(Handlebars.compile($("#login-template").html()));
         }
     };
 
