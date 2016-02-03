@@ -1,7 +1,7 @@
 SpacedRep
 ===============
 
-An "Spaced Repetition Learning System" backendless app.
+An "Spaced Repetition Learning System" backendless app based in Canjs.
 
 Installation and execution instructions:
 ------------------------------------------
