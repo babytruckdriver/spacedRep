@@ -20,6 +20,12 @@ define(["helper/util", "handlebars", "jquery", "can"], function (util, Handlebar
 
             log(info());
 
+            info.bind("change", function (ev, newVal) {
+                log("Cabió!: " + newVal);
+            });
+
+            person.pop();
+
             this.domCache();
             this.render();
         },
