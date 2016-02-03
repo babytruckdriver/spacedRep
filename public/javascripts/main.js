@@ -1,13 +1,8 @@
 require.config({
     baseUrl: "javascripts",
     paths: {
-        jquery: "vendor/jquery-2.1.1",
-        handlebars: "vendor/handlebars-v1.3.0"
-    },
-    shim: { //Se configuran los módulos no AMD
-        handlebars: {
-            exports: "Handlebars"
-        }
+        jquery: "../node_modules/jquery/dist/jquery.min",
+        handlebars: "../node_modules/handlebars/dist/handlebars.amd.min"
     }
 });
 

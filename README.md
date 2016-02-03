@@ -5,12 +5,12 @@ An "Spaced Repetition Learning System" backendless app.
 
 Installation and execution instructions:
 ------------------------------------------
-Installation:
+Installation and execution:
 
-    $ npm install --save node-static
-    $ node server.js
+    $ npm install
+    $ nodemon server.js public
 
-Execution:
+Navigate:
 
     In the browser: 
     http://localhost:8080
