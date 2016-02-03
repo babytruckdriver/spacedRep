@@ -6,12 +6,12 @@
  */
 
 // modules
-var static = require( 'node-static' ),
+var static = require( "node-static" ),
     port = 8080,
-    http = require( 'http' );
+    http = require( "http" );
 
 // config
-var file = new static.Server( './public', {
+var file = new static.Server( "", {
     cache: 3600,
     gzip: true
 } );

@@ -8,7 +8,7 @@ Installation and execution instructions:
 Installation and execution:
 
     $ npm install
-    $ nodemon server.js public
+    $ nodemon server.js
 
 Navigate:
 

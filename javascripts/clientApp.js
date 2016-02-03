@@ -1,4 +1,4 @@
-define(["helper/util", "handlebars", "jquery"], function (util, Handlebars, $) {
+define(["helper/util", "handlebars", "jquery", "can"], function (util, Handlebars, $, can) {
     "use strict";
 
     var log = util.log.bind(util);
@@ -7,6 +7,19 @@ define(["helper/util", "handlebars", "jquery"], function (util, Handlebars, $) {
 
         init() {
             log("spacedRep initializing...");
+
+            // Observable object
+            var person = new can.Map({
+                first: "Icíar",
+                last: "González"
+            });
+
+            var info = can.compute(function () {
+                return person.attr("first") + " " + person.attr("last") + " rules!";
+            });
+
+            log(info());
+
             this.domCache();
             this.render();
         },
