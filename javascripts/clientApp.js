@@ -9,13 +9,10 @@ define(["helper/util", "handlebars", "jquery", "can"], function (util, Handlebar
             log("spacedRep initializing...");
 
             // Observable object
-            var person = new can.Map({
-                first: "Icíar",
-                last: "González"
-            });
+            var person = new can.List(["Icíar", "González"]);
 
             var info = can.compute(function () {
-                return person.attr("first") + " " + person.attr("last") + " rules!";
+                return person.join(" ") + " rules!";
             });
 
             log(info());
