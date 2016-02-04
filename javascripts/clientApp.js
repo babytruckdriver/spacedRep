@@ -8,20 +8,32 @@ define(["helper/util", "handlebars", "jquery", "can"], function (util, Handlebar
         init() {
             log("spacedRep initializing...");
 
-            // Observable object
-            var person = new can.List(["Icíar", "González"]);
+            // -------
 
-            var info = can.compute(function () {
-                return person.join(" ") + " rules!";
+            var Person = can.Map.extend({
+                define: {
+                    fullName: {
+                        get() {
+                            return this.attr("first") + " " + this.attr("last");
+                        }
+                    }
+                }
             });
 
-            log(info());
-
-            info.bind("change", function (ev, newVal) {
-                log("Cabió!: " + newVal);
+            var person = new Person({
+                first: "Icíar",
+                last: "González Izquierdo"
             });
 
-            person.pop();
+            log(person.attr("fullName"));
+
+            person.bind("fullName", function (ev, newVal) {
+                log("Cambio: " + newVal);
+            });
+
+            person.attr("first", "Ramiya");
+
+            // -------
 
             this.domCache();
             this.render();
