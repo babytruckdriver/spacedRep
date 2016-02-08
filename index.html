@@ -12,6 +12,7 @@
 
 <!-- //TODO: La convinación de teclas CTRL-m saca el menú-->
 <!-- //TODO: Al pinchar en la flecha sale el menú-->
+<!-- //TODO: Exportar/Importar Base de Datos a archivo (HTML5 API) -->
 
 <body>
         <article class="app-header">
@@ -89,6 +90,20 @@
 
         <script  id="decks-template" type="text/x-handlebars-template">
                 <!-- //TODO: Crear plantilla que muestre el listado de mazos de tarjetas -->
+        </script>
+
+        <script  id="one-card-template" type="text/x-handlebars-template">
+                <!-- //TODO: Crear plantilla que muestre una carta en modo consulta -->
+                <ul>
+                        <li>
+                                <span>Palabra idioma estranjero: </span>
+                                <span>{{foreignWord}}</span>
+                        </li>
+                        <li>
+                                <span>Traducción: </span>
+                                <span>{{ownWord}}</span>
+                        </li>
+                </ul>
         </script>
 
         <!-- //TODO: Crear plantillas que muestren el contenido de los mazos (alta, baja, modificación) y las plantillas para el estudio de un mazo -->

@@ -6,9 +6,11 @@
         "requirejs": "^2.1.6"
     },
     "devDependencies": {
-        "node-static": "^0.7.7"
+        "node-static": "^0.7.7",
+        "napa": "^1.2.0"
     },
     "scripts": {
-        "preinstall": "npm install -g nodemon"
+        "preinstall": "npm install -g nodemon",
+        "postinstall": "napa https://github.com/passy/canjs-localstorage#v0.2.0:canjs-localstorage"
     }
 }

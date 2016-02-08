@@ -1,4 +1,4 @@
-define(["helper/util", "handlebars", "jquery", "can"], function (util, Handlebars, $, can) {
+define(["helper/util", "models/card", "handlebars", "jquery", "can"], function (util, Card, Handlebars, $, can) {
     "use strict";
 
     var log = util.log.bind(util);
@@ -9,29 +9,21 @@ define(["helper/util", "handlebars", "jquery", "can"], function (util, Handlebar
             log("spacedRep initializing...");
 
             // -------
+            window.localStorage.clear();
 
-            var Person = can.Map.extend({
-                define: {
-                    fullName: {
-                        get() {
-                            return this.attr("first") + " " + this.attr("last");
-                        }
-                    }
-                }
+            var card = new Card()
+            card.attr({
+                foreignWord: "House",
+                ownWord: "Casa"
+            });
+            card.attr({
+                foreignWord: "Dog",
+                ownWord: "Perro"
+            });
+            card.attr({
+                ownWord: "Perrele"
             });
 
-            var person = new Person({
-                first: "Icíar",
-                last: "González Izquierdo"
-            });
-
-            log(person.attr("fullName"));
-
-            person.bind("fullName", function (ev, newVal) {
-                log("Cambio: " + newVal);
-            });
-
-            person.attr("first", "Ramiya");
 
             // -------
 
@@ -41,10 +33,12 @@ define(["helper/util", "handlebars", "jquery", "can"], function (util, Handlebar
 
         domCache() {
             this.loginArea = $(".login-tag");
+            this.mainLayer = $("#main-layer");
         },
 
         render() {
             this.loginArea.html(Handlebars.compile($("#login-template").html()));
+            this.mainLayer.html(Handlebars.compile($("#one-card-template").html())({foreignWord: "Word", ownWord: "Palabra"}));
         }
     };
 
