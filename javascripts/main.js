@@ -4,6 +4,7 @@ require.config({
         jquery: "../node_modules/jquery/dist/jquery.min",
         handlebars: "../node_modules/handlebars/dist/handlebars.amd.min",
         can: "../node_modules/can/dist/amd/can",
+        stache: "../node_modules/can/dist/amd/can/view/stache",
         localstorage: "../node_modules/canjs-localstorage/can.localstorage"
     }
 });

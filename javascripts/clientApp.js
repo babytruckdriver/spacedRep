@@ -1,4 +1,4 @@
-define(["helper/util", "models/card", "handlebars", "jquery", "can"], function (util, Card, Handlebars, $, can) {
+define(["helper/util", "models/card", "handlebars", "jquery", "can", "stache"], function (util, Card, Handlebars, $, can, stache) {
     "use strict";
 
     var log = util.log.bind(util);
@@ -12,20 +12,20 @@ define(["helper/util", "models/card", "handlebars", "jquery", "can"], function (
 
             window.localStorage.clear();
 
-            let card = new Card();
-            card.attr({
+            this.card = new Card();
+            this.card.attr({
                 foreignWord: "House",
                 ownWord: "Casa"
             });
-            card.attr({
+            this.card.attr({
                 foreignWord: "Dog",
                 ownWord: "Perro"
             });
-            card.attr({
-                ownWord: "Cánido"
-            });
 
-            console.log(card.storageName);
+            // La vista (template) se actualiza automáticamente al cambiar el Modelo
+            window.setTimeout(function () {
+                this.card.attr("ownWord", "Cánido");
+            }.bind(this), 3000);
 
             // -------
 
@@ -39,8 +39,12 @@ define(["helper/util", "models/card", "handlebars", "jquery", "can"], function (
         },
 
         render() {
+
+            let oneCardTemplate = stache($("#one-card-template").html());
+            //Handlebars.compile($("#one-card-template").html())({foreignWord: "Word", ownWord: "Palabra"})
+
             this.loginArea.html(Handlebars.compile($("#login-template").html()));
-            this.mainLayer.html(Handlebars.compile($("#one-card-template").html())({foreignWord: "Word", ownWord: "Palabra"}));
+            this.mainLayer.html(oneCardTemplate(this.card));
         }
     };
 
