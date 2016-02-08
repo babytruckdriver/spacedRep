@@ -5,7 +5,11 @@ define(["localstorage"], function (LocalStorage) {
     var Card = LocalStorage.extend({
         storageName: "cards-canjs"
     }, {
+        // Instance properties
+        ownWord: "theOwnWord",
+        foreignWord: "theForeignWord",
         init: function () {
+
             // Autosave when changing something
             this.bind("change", function (ev, prop) {
 
@@ -18,6 +22,11 @@ define(["localstorage"], function (LocalStorage) {
                 if (ownProps.includes(prop)) {
                     ev.target.save();
                 }
+            });
+
+            // CHANGES: La modificación de una propiedad lanza un evento con el nombre de la propiedad
+            this.bind("ownWord", function (ev, newVal, oldVal) {
+                console.log("La propiedad 'ownWord' ha cambiado: " + oldVal + " -> " + newVal);
             });
         }
     });

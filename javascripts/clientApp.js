@@ -9,9 +9,10 @@ define(["helper/util", "models/card", "handlebars", "jquery", "can"], function (
             log("spacedRep initializing...");
 
             // -------
+
             window.localStorage.clear();
 
-            var card = new Card()
+            let card = new Card();
             card.attr({
                 foreignWord: "House",
                 ownWord: "Casa"
@@ -21,9 +22,10 @@ define(["helper/util", "models/card", "handlebars", "jquery", "can"], function (
                 ownWord: "Perro"
             });
             card.attr({
-                ownWord: "Perrele"
+                ownWord: "Cánido"
             });
 
+            console.log(card.storageName);
 
             // -------
 
