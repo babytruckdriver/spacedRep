@@ -1,0 +1,11 @@
+<!-- //TODO: Crear plantilla que muestre una carta en modo consulta -->
+<ul>
+        <li>
+                <span>Palabra idioma estranjero: </span>
+                <span>{{foreignWord}}</span>
+        </li>
+        <li>
+                <span>Traducción: </span>
+                <span>{{ownWord}}</span>
+        </li>
+</ul>

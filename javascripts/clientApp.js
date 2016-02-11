@@ -13,16 +13,21 @@ define(["helper/util", "models/card", "handlebars", "jquery", "can", "stache"], 
             window.localStorage.clear();
 
             this.card = new Card();
+            log(this.card.attr("ownWord"));
             this.card.attr({
                 foreignWord: "House",
-                ownWord: "Casa"
+                ownWord: "Casa",
+                age: "tres"
             });
             this.card.attr({
-                foreignWord: "Dog",
-                ownWord: "Perro"
+                foreignWord: "Dog    ",
+                ownWord: "Perro",
+                age: "cuatro"
             });
 
-            // La vista (template) se actualiza automáticamente al cambiar el Modelo
+            log("QuickView: " + this.card.attr("quickView"));
+
+            // La plantilla (template) se actualiza automáticamente al cambiar el Modelo
             window.setTimeout(function () {
                 this.card.attr("ownWord", "Cánido");
             }.bind(this), 3000);
@@ -36,15 +41,16 @@ define(["helper/util", "models/card", "handlebars", "jquery", "can", "stache"], 
         domCache() {
             this.loginArea = $(".login-tag");
             this.mainLayer = $("#main-layer");
+
+            // Templates
+            this.oneCardTemplate = can.view("../oneCardTemplate.stache");
         },
 
         render() {
-
-            let oneCardTemplate = stache($("#one-card-template").html());
-            //Handlebars.compile($("#one-card-template").html())({foreignWord: "Word", ownWord: "Palabra"})
-
             this.loginArea.html(Handlebars.compile($("#login-template").html()));
-            this.mainLayer.html(oneCardTemplate(this.card));
+
+            // La plantilla observa cambios en el modelo 'card' de forma automática
+            this.mainLayer.html(this.oneCardTemplate(this.card));
         }
     };
 
