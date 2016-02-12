@@ -1,4 +1,4 @@
-define(["helper/util", "models/card", "handlebars", "jquery", "can", "stache"], function (util, Card, Handlebars, $, can, stache) {
+define(["helper/util", "models/card", "handlebars", "jquery", "can"], function (util, Card, Handlebars, $, can) {
     "use strict";
 
     var log = util.log.bind(util);
@@ -39,8 +39,10 @@ define(["helper/util", "models/card", "handlebars", "jquery", "can", "stache"], 
         },
 
         domCache() {
-            this.loginArea = $(".login-tag");
-            this.mainLayer = $("#main-layer");
+
+            // Array de selectores de elemntos DOM a cachear
+            let domElemsIds = [".login-area", "#main-layer"];
+            util.domCache(domElemsIds, this);
 
             // Templates
             this.oneCardTemplate = can.view("../oneCardTemplate.stache");

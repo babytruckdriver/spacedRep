@@ -75,7 +75,7 @@ a:link,:visited {
         padding-left: 70px;
 }
 
-.login-tag {
+.login-area {
         position: absolute;
         top: 0;
         right: 20px;
@@ -88,7 +88,7 @@ a:link,:visited {
         font-weight: bold;
 }
 
-.login-tag > input {
+.login-area > input {
         line-height: .5em;
         color: grey;
         font-size: 1em;
