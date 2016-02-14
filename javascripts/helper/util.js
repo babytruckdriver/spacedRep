@@ -26,8 +26,14 @@ define({
             return arrTemp.shift() + arrTemp.map((val) => val.replace(/^./g, (a) => a.toUpperCase())).join("");
         }
 
+        // Se crea un objeto en el que crear todas las propiedades a cachear
+        let tempObj = {};
+
         list.forEach(function (selector) {
-            eval("obj." + nameMe(selector) + " = $('" + selector + "')");
+            tempObj[nameMe(selector)] = $(selector);
         });
+
+        // Se copian las propiedades del objeto temporal al objeto principal
+        Object.assign(obj, tempObj);
     }
 });
